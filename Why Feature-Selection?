@@ -1,0 +1,35 @@
+Reference: (https://towardsdatascience.com/the-5-feature-selection-algorithms-every-data-scientist-need-to-know-3a6b566efd2)
+
+Why don’t we give all the features to the ML algorithm and let it decide which feature is important?
+There are three reasons why we don’t:
+
+1. Curse of dimensionality — Overfitting
+If we have more columns in the data than the number of rows, we will be able to fit our training data perfectly, 
+but that won’t generalize to the new samples. And thus we learn absolutely nothing
+
+2. Occam’s Razor:
+We want our models to be simple and explainable. We lose explainability when we have a lot of features
+
+3. Garbage In Garbage out:
+Most of the times, we will have many non-informative features. For Example, Name or ID variables. 
+Poor-quality input will produce Poor-Quality output
+
+Also, a large number of features make a model bulky, time-taking, and harder to implement in production
+
+
+So What do we do?
+We select only useful features
+
+Fortunately, Scikit-learn has made it pretty much easy for us to make the feature selection
+
+There are a lot of ways in which we can think of feature selection, but most feature selection methods 
+can be divided into three major buckets
+
+Filter based: We specify some metric and based on that filter features. An example of such a metric could be correlation/chi-square
+
+Wrapper-based: Wrapper methods consider the selection of a set of features as a search problem. Example: Recursive Feature Elimination
+
+Embedded: Embedded methods use algorithms that have built-in feature selection methods. 
+For instance, Lasso and RF have their own feature selection methods
+
+
